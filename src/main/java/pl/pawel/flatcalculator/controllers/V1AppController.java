@@ -3,17 +3,17 @@ package pl.pawel.flatcalculator.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.pawel.flatcalculator.service.DataScrapperService;
+import pl.pawel.flatcalculator.service.DataFetchService;
 
 @RestController
 @RequiredArgsConstructor
 public class V1AppController {
 
-    private final DataScrapperService dataScrapperService;
+    private final DataFetchService dataFetchService;
 
     @RequestMapping("/test")
     public String test() {
-        dataScrapperService.fetchData();
+        dataFetchService.fetchData();
         return "ok";
     }
 }
